@@ -1,0 +1,18 @@
+2024-03-24 22:30:04.7698 INFO Now listening on: https://localhost:7198 
+2024-03-24 22:30:04.8025 INFO Now listening on: http://localhost:5198 
+2024-03-24 22:30:04.8025 INFO Application started. Press Ctrl+C to shut down. 
+2024-03-24 22:30:04.8025 INFO Hosting environment: Development 
+2024-03-24 22:30:04.8025 INFO Content root path: C:\Users\Artur\source\repos\PersonHandBook\PersonHandBook\ 
+2024-03-24 22:31:13.9079 WARN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. 
+2024-03-24 22:31:14.1470 INFO Entity Framework Core 6.0.0 initialized 'PersonContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: NoTracking SensitiveDataLoggingEnabled  
+2024-03-24 22:31:14.5368 WARN Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2024-03-24 22:31:15.0259 INFO Executed DbCommand (64ms) [Parameters=[@__personId_0='12'], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[City], [t].[DateOfBirth], [t].[FirstName], [t].[Gender], [t].[ImagePath], [t].[LastName], [t].[PersonalNumber], [p0].[Id], [p0].[PersonId], [p0].[PhoneNumber], [p0].[PhoneType], [r].[Id], [r].[FirstName], [r].[LastName], [r].[PersonId], [r].[RelationshipType]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[City], [p].[DateOfBirth], [p].[FirstName], [p].[Gender], [p].[ImagePath], [p].[LastName], [p].[PersonalNumber]
+    FROM [Persons] AS [p]
+    WHERE [p].[Id] = @__personId_0
+) AS [t]
+LEFT JOIN [Phones] AS [p0] ON [t].[Id] = [p0].[PersonId]
+LEFT JOIN [RelatedPersons] AS [r] ON [t].[Id] = [r].[PersonId]
+ORDER BY [t].[Id], [p0].[Id] 
