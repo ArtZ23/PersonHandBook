@@ -1,4 +1,4 @@
-﻿using PersonHandBook.Helpers.Enums;
+﻿using PersonHandBook.Enums;
 using PersonHandBook.Models.UpdatePerson;
 
 namespace PersonHandBook.Models

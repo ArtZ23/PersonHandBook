@@ -1,4 +1,4 @@
-﻿namespace PersonHandBook.Helpers.Enums
+﻿namespace PersonHandBook.Enums
 {
 	public enum City
 	{

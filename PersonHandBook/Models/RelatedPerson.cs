@@ -1,4 +1,4 @@
-﻿using PersonHandBook.Helpers.Enums;
+﻿using PersonHandBook.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonHandBook.Models

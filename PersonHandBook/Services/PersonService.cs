@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using PersonHandBook.Dtos;
-using PersonHandBook.Helpers.Enums;
+using PersonHandBook.Enums;
 using PersonHandBook.Models;
 
 namespace PersonHandBook.Services
